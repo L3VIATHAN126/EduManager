@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docentes</title>
+    <link rel="stylesheet" href="../Css/DocenteEsti.css">
+    <link rel="stylesheet" href="../Css/EstiloPanel.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="info-box" id="docente">
+        <h2>Docentes</h2>
+
+        <!-- Botón para mostrar el formulario -->
+        <button id="show-form-button" class="add-docente-button">Agregar Docente</button>
+
+        <!-- Formulario para agregar docentes (oculto por defecto) -->
+        <div class="form-container" id="add-docente-form-container" style="display: none;">
+                    <button class="close-info-box-button" onclick="cerrarInfoBox()">×</button>
+
+            <h3>Agregar Nuevo Docente</h3>
+            <form id="add-docente-form">
+                <label for="foto">Foto del Docente:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+                
+                <label for="nombre">Nombre del Docente:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="carrera-icon">Icono de Carrera:</label>
+                <input type="file" id="carrera-icon" name="carrera-icon" accept="image/*" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+                
+                <label for="periodo">Periodo Actual:</label>
+                <input type="text" id="periodo" name="periodo" required>
+                
+                <!-- Campo para estado activo/inactivo usando un select -->
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+
+                <!-- Comentario solo para docentes inactivos -->
+                <div id="comentario-container" style="display: none;">
+                    <label for="comentario">Comentario de Inactividad:</label>
+                    <textarea id="comentario" name="comentario"></textarea>
+                </div>
+                
+                <button type="submit" class="punto" >Guardar Docente</button>
+            </form>
+        </div>
+
+        <!-- Tabla para mostrar los docentes -->
+        <table class="docente-table" data-docente-id="1">
+            <thead>
+                <tr>
+                    <th>Id</th> <!-- Mostrar el ID del docente en la primera columna -->
+                    <th>Foto</th>
+                    <th>Nombre del Docente</th>
+                    <th>Carrera</th>
+                    <th>Correo</th>
+                    <th>Periodo Actual</th>
+                    <th>Estado</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody id="docente-table-body">
+                <!-- Las filas de docentes se agregarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Panel de detalles del docente -->
+<div id="docentePanel" class="docente-panel" style="display: none;">
+    <div class="docente-container">
+
+        <!-- Primera columna: Tarjeta del docente -->
+        <div class="docente-info-card">
+            <div class="docente-info">
+                <p id="docenteId"></p> <!-- ID del docente -->
+<button class="close-button" onclick="cerrarPanel()">×</button>
+                <!-- Foto del docente -->
+                <label for="docenteFoto">Foto del Docente:</label>
+                <img id="docenteFotoPreview" src="" alt="Foto del docente" class="docente-foto">
+                <input id="docenteFoto" type="file" accept="image/*" class="editable-field" onchange="previewImage(event, 'docenteFotoPreview')">
+
+                <!-- Nombre del docente -->
+                <h3>
+                    <input id="docenteNombre" type="text" value="" class="editable-field" placeholder="Nombre del Docente">
+                </h3>
+
+                <!-- Logo de Carrera -->
+                <label for="docenteLogo">Logo de Carrera:</label>
+                <img id="docenteLogoPreview" src="" alt="Logo de Carrera" class="docente-logo">
+                <input id="docenteLogo" type="file" accept="image/*" class="editable-field" onchange="previewImage(event, 'docenteLogoPreview')">
+
+                <!-- Correo del docente -->
+                <p>
+                    <label for="docenteCorreo">Correo:</label>
+                    <input id="docenteCorreo" type="email" value="" class="editable-field" placeholder="Correo Electrónico">
+                </p>
+
+                <!-- Periodo actual -->
+                <p>
+                    <label for="docentePeriodo">Periodo Actual:</label>
+                    <input id="docentePeriodo" type="text" value="" class="editable-field" placeholder="Periodo Actual">
+                </p>
+
+                <!-- Estado del docente -->
+                <p>
+                    <label for="docenteEstado">Estado:</label>
+                    <select id="docenteEstado" class="editable-field">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </p>
+
+                <!-- Comentario -->
+                <p>
+                    <label for="docenteComentario">Comentario:</label>
+                    <textarea id="docenteComentario" class="editable-field" placeholder="Comentario"></textarea>
+                </p>
+
+                <!-- Botón para guardar cambios -->
+                <button id="saveDocenteInfo" class="save-button">Guardar Cambios</button>
+            </div>
+        </div>
+
+        <!-- Segunda columna: PDFs -->
+        <div class="pdf-section-container">
+            <div class="pdf-upload-section">
+                <h4>Subir PDF</h4>
+                <input type="file" id="pdfUpload" accept=".pdf" multiple>
+            </div>
+
+            <div class="pdf-list-viewer-section">
+                <div class="pdf-list">
+                    <h4>Validacion PDF:</h4>
+                    <ul id="pdfList">
+                        <!-- Archivos PDF se mostrarán aquí -->
+                    </ul>
+                      <br>
+                </div>
+                  <br>
+                <div class="pdf-viewer">
+                    <h4>Visualización de PDF:</h4>
+                    <embed id="pdfViewer" src="" type="application/pdf" width="103%" height="750px">
+                </div>
+            </div>
+        </div>
+<div class="additional-info-container">
+    <!-- Retroalimentación -->
+    <div class="additional-info">
+        <h4>Certificaciones</h4>
+        <textarea id="retroalimentacion" placeholder="Ingrese retroalimentación..."></textarea>
+    </div>
+    <!-- Estudios -->
+    <div class="additional-info">
+        <h4>Cursos</h4>
+        <textarea id="estudios" placeholder="Ingrese estudios..."></textarea>
+    </div>
+    <!-- Especialidades -->
+    <div class="additional-info">
+        <h4>Diplomados</h4>
+        <textarea id="especialidades" placeholder="Ingrese especialidades..."></textarea>
+    </div>
+</div>
+
+        <!-- Botones adicionales -->
+        <div class="save-all-container">
+            <button id="saveAllChanges" class="save-button">Guardar Datos</button>
+        </div>
+        <div class="modify-data-container">
+            <button id="modifyDocenteData" class="modify-button">Modificar Datos</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function cerrarPanel() {
+    const panel = document.querySelector('.docente-panel');
+    panel.style.display = 'none'; /* Ocultar el panel */
+}
+
+</script>
+
+
+<script src="../JavaScript/AgregarD.js"></script>
+<script src="../JavaScript/EditarD.js"></script>
+
+<script src="../JavaScript/SubirDetalles.js"></script>
+<script src="../JavaScript/InfroD.js"></script>
+<script src="../JavaScript/MostrarDetalles.js"></script>
+<script src="../JavaScript/ModificarDocente.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+/* Main container with updated background color */
+.main-container {
+    width: 100%;
+    height: 100vh; /* Occupies full height of the iframe */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Center elements vertically */
+    justify-content: center; /* Center elements horizontally */
+    background-color: rgba(30, 50, 90, 0.9); /* Blue translucent background */
+}
+
+/* Info box panel with white translucent background */
+.info-box {
+    width: 90%; /* Reduced width for better presentation */
+    height: 90%; /* Reduced height for better spacing */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* White translucent background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    overflow-y: auto; /* Allow scrolling if content exceeds */
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Title styling */
+.info-box h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgba(30, 50, 90, 0.9); /* Matches the main background color */
+}
+
+/* Add teacher button with hover effect */
+.add-docente-button {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 12px 25px;
+    background-color: rgba(30, 50, 90, 0.9); /* Matches main background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.add-docente-button:hover {
+    background-color: #1f2c60; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Form container with close button */
+.form-container {
+    display: none;
+    padding: 50px;
+    background-color: rgba(30, 50, 90, 0.9); /* Blue translucent background */
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    margin: 10px auto;
+    color: white;
+    position: relative;
+}
+
+.form-container h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Close button for form */
+.form-container .close-form-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d; /* Red button for closing */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-container .close-form-button:hover {
+    background-color: #e60000; /* Darker red on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Input and label styling */
+.form-container label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Teacher table with hover effects */
+.docente-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.95); /* White translucent background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.docente-table th {
+    padding: 12px;
+    background-color: rgba(30, 50, 90, 0.9); /* Matches main background */
+    color: white;
+    font-weight: bold;
+}
+
+.docente-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.docente-table tr:nth-child(even) {
+    background-color: #f1f8ff; /* Light blue for alternate rows */
+}
+
+.docente-table tr:hover {
+    background-color: #e0ebff; /* Light blue highlight on hover */
+}
+
+/* Teacher profile picture */
+.docente-foto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid rgba(30, 50, 90, 0.9); /* Matches panel color */
+}
+
+/* Style for the comment box */
+#comentario {
+    width: 90%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 50, 90, 0.9); /* Blue translucent background */
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    margin: 10% auto;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Close button for modal */
+.close-button {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover {
+    color: black;
+}
+.punto{
+   background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(220, 220, 220, 0.9));
+  color: #333;
+  padding: 4px 3px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(180, 180, 180, 0.9);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}

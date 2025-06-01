@@ -1,0 +1,198 @@
+/* Ajuste del panel al tamaño del frame */
+.docente-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 40, 85, 0.9); /* Azul oscuro profesional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenedor principal */
+.docente-container {
+    background-color: rgba(10, 60, 110, 0.95); /* Azul profundo vibrante */
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.7); /* Sombra fuerte */
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr;
+    gap: 25px;
+    overflow-y: auto;
+    color: #fff; /* Texto claro */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Tarjeta azul: Información del docente */
+.docente-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #0e8ae6, #1cb4f5); /* Gradiente azul vibrante */
+    border: 3px solid #1ca9e6; /* Bordes azul brillante */
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5); /* Sombra */
+    text-align: center;
+    font-size: 1.3em;
+    position: relative;
+    width: 400px; /* Fijar el ancho */
+    height: 600px; /* Fijar el alto */
+    overflow: hidden; /* Ocultar contenido que exceda el tamaño */
+}
+
+/* Contenido de la tarjeta con scroll interno */
+.docente-info-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto; /* Scroll solo si hay demasiado contenido */
+    width: 100%; /* Asegurar que el contenido ocupe el ancho completo */
+    height: 100%; /* Asegurar que el contenido ocupe el alto completo */
+    padding: 10px;
+    box-sizing: border-box; /* Incluir padding dentro del tamaño fijo */
+}
+
+/* Foto del docente */
+.docente-foto {
+    width: 150px; /* Tamaño fijo para mantener proporciones */
+    height: 150px; /* Tamaño fijo */
+    border-radius: 50%; /* Mantener como círculo */
+    border: 5px solid #fff; /* Blanco sólido */
+    object-fit: cover;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+/* Logo de carrera */
+.docente-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid #fff; /* Blanco sólido */
+    object-fit: cover;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
+}
+
+/* Subtítulos y campos */
+.docente-info-item {
+    font-size: 1.2em; /* Tamaño de letra ajustado */
+    line-height: 1.5; /* Separación entre líneas */
+    color: #ffeb3b; /* Amarillo brillante */
+    text-align: center;
+    margin: 0;
+}
+
+/* Estilo visual para los campos de información */
+.docente-info-item span {
+    font-weight: bold;
+    color: #ffc107; /* Dorado vibrante */
+}
+
+/* Scroll para contenido adicional si es necesario */
+.docente-info-card-content::-webkit-scrollbar {
+    width: 6px; /* Ancho del scroll */
+}
+
+.docente-info-card-content::-webkit-scrollbar-thumb {
+    background: #1ca9e6; /* Color del scroll */
+    border-radius: 10px;
+}
+
+.docente-info-card-content::-webkit-scrollbar-thumb:hover {
+    background: #0e8ae6; /* Color más oscuro al pasar el mouse */
+}
+
+/* Contenedores de secciones adicionales */
+.additional-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo general para retroalimentación, estudios y especialidades */
+.additional-info {
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco brillante */
+    border: 3px solid #1ca9e6; /* Azul brillante */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Sombra */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #212121; /* Texto oscuro */
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+/* Títulos de las secciones */
+.additional-info-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ff5722; /* Naranja vibrante */
+    margin-bottom: 10px;
+    border-bottom: 3px solid #ff8a50; /* Línea decorativa naranja */
+    padding-bottom: 5px;
+}
+
+/* Botones */
+.save-button,
+.modify-button {
+    background: linear-gradient(135deg, #29b6f6, #0288d1); /* Gradiente azul eléctrico */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid #0288d1; /* Azul eléctrico */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.save-button:hover,
+.modify-button:hover {
+    background: linear-gradient(135deg, #0288d1, #01579b); /* Gradiente más oscuro */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/* PDFs */
+.pdf-section-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco brillante */
+    border: 3px solid #0288d1; /* Azul eléctrico */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Sombra */
+    overflow-y: auto;
+    color: #212121; /* Texto oscuro */
+}
+
+.pdf-list {
+    background-color: rgba(245, 245, 245, 0.95); /* Gris claro */
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 2px solid #1ca9e6;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #212121;
+}
+ 
+.info-box{
+    
+    width: 80px;
+  height: 80px;
+
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+      font-size: 15px; /* Tamaño del texto */
+
+    }

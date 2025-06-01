@@ -1,0 +1,327 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Altura completa para html y body */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    position: relative;
+    inline-size: 100vw;
+    block-size: 100vh;
+}
+
+/* Imagen de fondo */
+.background-image {
+    background-image: url('../imagenes/1.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 91%;
+    z-index: -6;
+}
+
+/* Caja de login */
+.login-box {
+    position: absolute;
+    inset-block-start: 55%; /* Baja un poco la caja */
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 60px 10px 10px 10px; /* Antes era 300px, ahora 60px */
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    inline-size: 400px;
+    min-block-size: 580px; /* Altura mínima para que no se vea apretado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box form input {
+    display: block;
+    inline-size: 100%;
+    padding: 15px;
+    margin: 20px 0 0 0; /* Más espacio arriba, nada abajo */
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    position: static; /* Quita el top negativo */
+}
+
+.login-box form button {
+    inline-size: 100%;
+    padding: 15px;
+    background-color: #004AAD;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 15px 0 0 0; /* Más espacio arriba */
+    position: static; /* Quita el top negativo */
+    font-size: 1.2em;
+}
+
+.login-box form button:hover {
+    animation: pulse 0.6s;
+}
+
+/* Enlace "Crear Cuenta" */
+.help-links {
+    margin-block-start: 40px; /* Más espacio respecto al botón */
+    margin-block-end: 10px; /* Espacio inferior */
+}
+
+.help-links a {
+    color: white;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    inset-block-end: 0;
+    inline-size: 100%;
+    background-color: #1A2F6A;
+    color: white;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer .contact-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.footer .contact-info img {
+    inline-size: 70px;
+    block-size: auto;
+    margin-inline-end: 150px;
+}
+
+.footer .address {
+    text-align: end;
+    margin-inline-start: auto;
+    padding-inline-start: 200px;
+    flex-grow: 2;
+}
+
+.footer .dirección {
+    text-align: start;
+    margin-inline-start: 400px;
+}
+
+.footer .tecblanco img {
+    inline-size: 150px;
+    block-size: auto;
+    margin-inline-start: 100px;
+}
+.footer .itsoehblanco img {
+    inline-size: 150px;
+    block-size: auto;
+    margin-inline-start: 100px
+}
+.container .TecOrig img {
+    float: inline-end; /* O puedes usar margin-left */
+    margin-inline-end:1550px; 
+    inline-size: 200px;
+}
+
+/* Estilo para el cuadro de enlace "¿Ya tienes cuenta?" */
+.login-link-box {
+    background-color: rgba(99, 112, 139, 0.6); /* Fondo semitransparente */
+    padding: 15px;
+    border-radius: 25px; /* Borde redondeado */
+    text-align: center;
+    inline-size: 100%;
+    margin-block-start: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Estilo para el enlace de "Inicia sesión" */
+.login-link {
+    color: #ADD8E6; /* Color del enlace */
+    text-decoration: none;
+    font-weight: bold;
+    margin-inline-start: 5px;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #ffffff; /* Cambia el color del enlace al pasar el ratón */
+}
+ 
+.scrolling-text {
+  position: absolute;
+  top: 80px; /* Cambia este valor para bajarlo más */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: none !important;
+  border: none !important;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.scrolling-content {
+  display: inline-block;
+  animation: scroll-left 12s linear infinite;
+  font-size: 1.2em;
+  white-space: nowrap;
+  color: #fff; /* Cambia el color aquí, por ejemplo blanco */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-img {
+  vertical-align: middle;
+  height: 70px; /* Ajusta el tamaño de la imagen a tu gusto */
+  margin-right: 10px;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: -30px; /* Ajusta según lo alto que quieras el logo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 11;
+    position: relative;
+}
+
+/* Nieve sobre el logo */
+.logo .snow {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    width: 300px;
+    height: 200px; /* Cambia este valor para aumentar o reducir la altura */
+    pointer-events: none;
+    z-index: 20;
+}
+
+.snow-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.snow-svg .snowflake {
+    position: absolute;
+    background-color: rgba(26, 47, 106,); /* Blanco con 70% de opacidad */
+    border-radius: 50%;
+    opacity: 0.8; /* Opacidad de la nieve */
+}
+.snow-svg .snowflake:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    top: 20%;
+    left: 10%;
+    animation: fall 4s infinite linear; /* Velocidad de la nieve */
+}
+.snow-svg .snowflake:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    top: 30%;
+    left: 20%;
+    animation: fall 6s infinite linear; /* Velocidad de la nieve */
+}
+
+.snow-svg .snowflake {
+    fill: rgb(26, 47, 106);
+}
+
+#snow-top-layer {
+    will-change: transform;
+    transform: translateY(-200px);
+    animation: fall 4s infinite linear; /* Velocidad de la nieve */
+}
+
+#snow-bottom-layer {
+    will-change: transform;
+    transform: translateY(-200px);
+    animation: fall 8s infinite linear; /* Velocidad de la nieve */
+}
+
+@keyframes fall {
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1); }
+    20% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.input-icon {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-icon .icon-input {
+    position: absolute;
+    right: 18px;      /* Más espacio a la derecha */
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;      /* Tamaño más pequeño y uniforme */
+    height: 22px;
+    opacity: 0.6;
+    pointer-events: none; /* El icono no interfiere con el input */
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 12px 52px 12px 18px; /* Más espacio a la derecha para el icono */
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+    outline: none;
+    background: #fff;
+    color: #444;
+    box-sizing: border-box;
+}

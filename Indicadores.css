@@ -1,0 +1,179 @@
+/* Configuración general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 20px auto;
+    background: rgba(30, 50, 90, 0.9); /* Fondo azul translúcido */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Scroll horizontal si el contenido excede el ancho */
+    color: #ffffff; /* Texto blanco brillante */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #ffffff; /* Texto blanco brillante */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Resaltado con sombra */
+}
+
+/* Estilo para las tablas */
+table {
+    width: 100%; /* Acomoda al ancho del contenedor */
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Aplica redondeo a todo el contenido */
+    background-color: rgba(20, 40, 80, 0.9); /* Fondo azul más oscuro */
+    color: #ffffff; /* Texto blanco brillante */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+/* Encabezados de la tabla */
+table th {
+    background-color: rgba(10, 30, 60, 0.9); /* Encabezados más oscuros */
+    color: #ffffff; /* Texto blanco brillante */
+    font-weight: bold;
+    padding: 12px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Resaltado con sombra */
+}
+
+/* Celdas */
+table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Líneas de separación claras */
+    white-space: nowrap;
+    font-size: 14px; /* Tamaño del texto */
+}
+
+/* Estilo para filas alternas */
+table tr:nth-child(even) {
+    background-color: rgba(40, 60, 100, 0.8); /* Color más claro para filas pares */
+}
+
+/* Resalta las filas al pasar el mouse */
+table tr:hover {
+    background-color: rgba(60, 80, 120, 0.9); /* Color de resaltado */
+}
+
+/* Estilo especial para los porcentajes */
+table td span.percentage {
+    font-size: 16px; /* Aumentar tamaño de los porcentajes */
+    font-weight: bold;
+    color: #ffeb3b; /* Amarillo brillante */
+    text-shadow: 0 0 5px rgba(255, 235, 59, 0.8); /* Sombra para resaltar */
+}
+
+/* Estilo para contenedores de gráficos */
+.chart-container {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    text-align: left; /* Gráficos alineados a la izquierda */
+    background-color: rgba(20, 40, 80, 0.9); /* Fondo azul translúcido */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para los gráficos */
+}
+
+/* Estilo para el lienzo de los gráficos */
+.chart-container canvas {
+    display: block;
+    margin: auto; /* Centra el gráfico dentro del contenedor */
+}
+
+/* Texto debajo de los gráficos */
+.chart-container p {
+    font-size: 14px;
+    color: #ffffff; /* Texto blanco brillante */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Resaltado con sombra */
+}
+
+/* Estilo especial para porcentajes debajo de los gráficos */
+.chart-container p span.percentage {
+    color: #ffeb3b; /* Amarillo brillante */
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(255, 235, 59, 0.8); /* Resaltado */
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduce el espacio en contenedores */
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 12px; /* Reduce el tamaño de texto en tablas */
+    }
+
+    h1 {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    .chart-container {
+        height: 300px; /* Reduce el alto de los gráficos */
+    }
+}
+
+/* Estilo para el contenedor de filtros */
+.filters-container {
+    background-color: rgba(30, 50, 90, 0.9); /* Fondo azul translúcido */
+    color: #ffffff; /* Texto blanco brillante */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el label y el select */
+}
+
+/* Estilo para el label */
+.filters-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco brillante */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Resaltado */
+}
+
+/* Estilo para el select */
+.filters-container select {
+    background-color: rgba(20, 40, 80, 0.9); /* Fondo oscuro para el select */
+    color: #ffffff; /* Texto blanco brillante */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); /* Efecto de profundidad */
+}
+
+/* Efecto al pasar el mouse sobre el select */
+.filters-container select:hover {
+    background-color: rgba(40, 60, 100, 0.9); /* Color más claro */
+}
+
+/* Estilo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .filters-container {
+        flex-direction: column; /* Ajustar diseño en pantallas pequeñas */
+        gap: 5px;
+        text-align: center;
+    }
+    .filters-container label,
+    .filters-container select {
+        width: 100%; /* Ocupa todo el ancho */
+    }
+}

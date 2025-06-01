@@ -1,0 +1,211 @@
+/* Sugerencia: agrega esto al inicio del CSS de cada archivo cargado en el iframe */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    background: #f5f7fa; /* o el color que uses */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contenedor-principal, .main-content, .contenido {
+    width: 100%;
+    max-width: 1200px; /* ajusta según tu diseño */
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Fondo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('background-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(30, 50, 90, 1); /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 95%; /* Ajustado */
+    max-width: 2000px;
+    padding: 40px;
+    background-color: rgba(40, 60, 100, 0.9); /* Fondo azul translúcido */
+    border-radius: 50px;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    color: white; /* Texto blanco */
+}
+
+/* Columna izquierda */
+.left-column {
+    width: 45%;
+    margin-right: 20px;
+    margin-left: 0;
+    align-self: flex-start;
+    min-height: 80vh;
+    padding-left: 0;
+}
+
+.left-column h2 {
+    font-size: 20px;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 10px;
+}
+
+.left-column p {
+    font-size: 20px;
+    color: rgba(220, 220, 220, 1); /* Blanco claro */
+    line-height: 1.4;
+    background-color: rgba(50, 70, 120, 0.9); /* Fondo azul translúcido */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Formulario de subida */
+.upload-form {
+    margin-top: 20px;
+    background-color: rgba(50, 70, 120, 0.9); /* Fondo azul translúcido */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.upload-form label {
+    color: white; /* Texto blanco */
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.upload-form input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco translúcido */
+    color: rgba(30, 50, 90, 1); /* Azul oscuro */
+    cursor: pointer;
+}
+
+.upload-form button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(30, 50, 90, 1); /* Azul oscuro */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-form button:hover {
+    background-color: rgba(20, 40, 70, 1); /* Azul más oscuro */
+    transform: scale(1.05); /* Zoom */
+}
+
+/* Lista de PDFs */
+.pdf-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-list h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white; /* Texto blanco */
+}
+
+.pdf-list ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.pdf-list li {
+    padding: 10px;
+    background-color: rgba(60, 80, 130, 0.9); /* Fondo azul translúcido */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    color: white; /* Texto blanco */
+}
+
+/* Columna derecha */
+.right-column {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(50, 70, 120, 0.9); /* Fondo azul translúcido */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    color: white; /* Texto blanco */
+}
+
+iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+}
+
+/* Imagen pequeña */
+.small-image {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Responsivo: pantallas medianas */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsivo: pantallas pequeñas */
+@media (max-width: 480px) {
+    .left-column h2, .pdf-list h3 {
+        font-size: 18px;
+    }
+
+    .left-column p, .pdf-list li {
+        font-size: 14px;
+    }
+}

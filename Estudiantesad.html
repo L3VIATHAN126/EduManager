@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores por Materia y Generales</title>
+    <link rel="stylesheet" href="../Css/EstiloEstu.css">
+    <link rel="stylesheet" href="../Css/EstiloPanelEstu.css">
+  
+</head>
+<body>
+    <div class="container">
+        <h1>Subir Lista de Alumnos</h1>
+        
+        <!-- Formulario para subir indicadores por materia -->
+        <form id="pdfForm" enctype="multipart/form-data">
+            <label for="uploadedFile">Selecciona un archivo</label><br>
+            <input type="file" id="uploadedFile" name="uploadedFile" accept=".pdf, .xlsx, .xls" required><br><br>
+            <button type="submit">Subir y Procesar</button>
+        </form>
+
+        <div id="resultados">
+            <h2>Resultados</h2>
+    
+  <select id="searchType">
+    <option value="clave">Buscar por Clave</option>
+    <option value="matricula">Buscar por Matrícula</option>
+    <option value="nombre">Buscar por Nombre</option>
+</select>
+<input type="text" id="searchInput" placeholder="Ingrese valor a buscar" />
+<button id="searchButton">Buscar</button>
+<table id="studentsTable" border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Matrícula</th>
+            <th>Clave</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody id="studentTable-Body">
+        <!-- Las filas se insertarán aquí dinámicamente -->
+    </tbody>
+</table>
+
+<div id="estudiantePanel" class="estudiante-panel" style="display: none;">
+    <div class="estudiante-container">
+        <div class="estudiante-info-card">
+            <div class="estudiante-info">
+                <!-- Campo oculto para el ID del estudiante -->
+                <input type="hidden" id="estudianteID" value="">
+
+                <!-- Foto del estudiante -->
+                <label for="estudianteFoto">Foto del Estudiante:</label>
+                <img id="estudianteFotoPreview" src="" alt="Foto del estudiante" class="estudiante-foto" style="max-width: 200px; max-height: 200px; display: block; margin-bottom: 10px;">
+                <input id="estudianteFoto" type="file" name="estudianteFoto" accept="image/*" class="editable-field" onchange="previewImage(event)">
+
+                <!-- Información adicional -->
+                <p>
+                    <label for="estudianteMatricula">Matrícula:</label>
+                    <input id="estudianteMatricula" type="text" value="" class="editable-field" disabled>
+                </p>
+                <p>
+                    <label for="estudianteClave">Clave:</label>
+                    <input id="estudianteClave" type="text" value="" class="editable-field" disabled>
+                </p>
+                <p>
+                    <label for="estudianteNombre">Nombre:</label>
+                    <input id="estudianteNombre" type="text" value="" class="editable-field" disabled>
+                </p>
+                
+                <!-- Botón para guardar la foto -->
+                <button type="button" id="saveFotoButton">Guardar Foto</button>
+
+                <!-- Botón para cerrar -->
+                <button type="button" onclick="closeEstudiantePanel()">Cerrar</button>
+            </div>
+        </div>
+        
+        
+        <!-- Sección para subir varios reportes en PDF -->
+        <div class="pdf-section-container">
+            <div class="pdf-upload-section">
+                <h4>Subir Reportes en PDF</h4>
+                <input type="file" id="pdfUpload" accept=".pdf" multiple> <!-- Permite seleccionar varios archivos -->
+            </div>
+
+            <!-- Cuadro para la lista de PDFs y visor de PDF -->
+            <div class="pdf-list-viewer-section">
+                <div class="pdf-list">
+                    <h4>Archivos PDF Subidos:</h4>
+                    <ul id="pdfList">
+                        <!-- Los PDFs subidos se mostrarán aquí -->
+                    </ul>
+                </div>
+                <div class="pdf-viewer">
+                    <h4>Visualización de PDF:</h4>
+                    <embed id="pdfViewer" src="" type="application/pdf" width="100%" height="750px">
+                </div>
+            </div>
+        </div>
+
+        <!-- Campos adicionales para Retroalimentación, Logros y Reportes -->
+        <div class="additional-info-container">
+            <div class="additional-info">
+                <h4>Retroalimentación</h4>
+                <textarea id="retroalimentacion" placeholder="Ingrese retroalimentación..."></textarea>
+            </div>
+            <div class="additional-info">
+                <h4>Logros</h4>
+                <textarea id="Logros" placeholder="Ingrese logros del estudiante..."></textarea>
+            </div>
+            <div class="additional-info">
+                <h4>Reportes</h4>
+                <textarea id="Reportes" placeholder="Ingrese reportes adicionales..."></textarea>
+            </div>
+        </div>
+
+        <!-- Botones de acciones -->
+        <div class="action-buttons-container">
+            <button id="saveAllChanges" class="save-button">Guardar Todos los Cambios</button>
+            <button id="modifyEstudianteData" class="modify-button">Modificar Datos Básicos</button>
+        </div>
+
+        <!-- Botón de cerrar panel -->
+        <span class="close-button" onclick="closeEstudiantePanel()">&times;</span>
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+
+    <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+    <script src="../JavaScript/ConsultarEstu.js" defer></script>
+    <script src="../JavaScript/EstudiAdm.js" defer></script>
+    <script src="../JavaScript/PanelEstu.js" defer></script>
+    <script src="../JavaScript/Subir_detalles.js" defer></script>
+    <script src="../JavaScript/MostrarEstudi.js" defer></script>
+    <script src="../JavaScript/ModifcarEstu.js" defer></script>
+</body>
+</html>

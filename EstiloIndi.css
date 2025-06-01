@@ -1,0 +1,112 @@
+/* Asegurar que el contenedor ocupe el tamaño completo */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: rgba(30, 50, 90, 0.95); /* Azul oscuro */
+}
+
+/* Contenedor principal que ocupa todo el frame */
+.container {
+    height: 100%; /* Ocupar toda la altura del frame */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    background-color: rgba(30, 50, 90, 0.95); /* Azul oscuro */
+    color: white;
+    padding: 30px; /* Espaciado interno */
+    box-shadow: none; /* Quitar sombra para unificar con el fondo */
+    border-radius: 0; /* Quitar bordes redondeados */
+}
+
+/* Estilo del título */
+.container h1 {
+    font-size: 36px; /* Tamaño más grande para destacar */
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px; /* Separación del título con el contenido */
+    text-align: center;
+}
+
+/* Formularios centrados y grandes */
+form {
+    width: 80%; /* Formularios más anchos */
+    max-width: 600px; /* Limitar tamaño máximo */
+    background-color: rgba(255, 255, 255, 0.98); /* Fondo blanco translúcido */
+    padding: 20px 30px; /* Espaciado interno */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+    margin-bottom: 20px; /* Separación entre formularios */
+    text-align: left;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Estilo del botón */
+form button {
+    width: 100%; /* Botón ocupa todo el ancho */
+    padding: 15px; /* Tamaño más grande */
+    background-color: rgba(30, 50, 90, 0.95); /* Azul oscuro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px; /* Fuente más grande */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+form button:hover {
+    background-color: #1f2c60; /* Azul más oscuro en hover */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+/* Input de archivo más grande */
+form input[type="file"] {
+    width: 100%;
+    padding: 15px; /* Más espacio interno */
+    font-size: 16px; /* Tamaño de texto mayor */
+    border-radius: 5px;
+    border: 1px solid rgba(30, 50, 90, 0.5);
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Sección de resultados */
+#resultados {
+    width: 80%; /* Igual ancho que los formularios */
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.98); /* Fondo blanco translúcido */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+#resultados h2 {
+    font-size: 24px; /* Texto destacado */
+    font-weight: bold;
+    color: rgba(30, 50, 90, 0.95); /* Azul oscuro */
+}
+
+/* Responsive design para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    form,
+    #resultados {
+        width: 90%; /* Formularios más anchos en pantallas pequeñas */
+    }
+
+    form button {
+        font-size: 16px; /* Tamaño de fuente reducido */
+    }
+
+    #resultados h2 {
+        font-size: 20px; /* Tamaño reducido para subtítulos */
+    }
+}

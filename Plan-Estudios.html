@@ -1,0 +1,41 @@
+
+    <link rel="stylesheet" href="../Css/Historia.css">
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Columna izquierda: Misión y Visión, y formulario de carga -->
+        <div class="left-column">
+            <h2>Misión</h2>
+            <p>Formar ingenieros en sistemas computacionales con conocimientos significativos y habilidades pertinentes, a través de una formación integral en un programa educativo certificado y acreditado con estándares de calidad, que den solución a los problemas de los sectores de la producción, transformación y de servicios.</p>
+
+            <h2>Visión</h2>
+            <p>Ser un programa educativo actualizado y reconocido por sus estándares de calidad académica, a través de la capacitación y certificación de docentes y estudiantes e infraestructura pertinente, para la formación de profesionistas competentes en el desarrollo de sistemas computacionales.</p>
+            
+            <!-- Formulario de carga de un nuevo PDF -->
+            <div class="upload-form">
+                <h3>Subir Nuevo PDF</h3>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="nuevo_pdf_plan" accept="application/pdf" required>
+                    <button type="submit">Subir PDF</button>
+                </form>
+                <!-- Div para mensajes de éxito o error -->
+                <div id="uploadMessage"></div>
+            </div>
+        </div>
+
+        <!-- Columna derecha: Visualización de PDF -->
+        <div class="right-column">
+            <iframe id="pdfViewerPlan" width="100%" height="600px" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- Referencia al archivo JavaScript -->
+    <script src="../JavaScript/SubiPdf.js"></script>
+</body>
+</html>
+
+    
+    
+   

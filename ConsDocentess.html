@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Docentes</title>
+    <link rel="stylesheet" href="../Css/DiseñoConsultasD.css">
+        <link rel="stylesheet" href="../Css/PPP.css">
+
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- Caja de información para mostrar los docentes registrados -->
+        <div class="info-box" id="docente">
+            <h2>Docentes Registrados</h2>
+
+            <!-- Tabla para mostrar la lista de docentes -->
+            <table class="docente-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Foto</th>
+                        <th>Nombre del Docente</th>
+                        <th>Carrera</th>
+                        <th>Correo</th>
+                        <th>Periodo Actual</th>
+                        <th>Estado</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody id="docente-table-body">
+                    <!-- Las filas de docentes se agregarán dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- Panel de detalles del docente -->
+<div id="docentePanel" class="docente-panel" style="display: none;">
+    <div class="docente-container">
+        
+        <!-- Columna izquierda: Tarjeta de información del docente -->
+        <div class="docente-info-card">
+            <div class="docente-info">
+                <p><strong></strong> <span id="docenteId"></span></p>
+                <p><strong>Foto del Docente:</strong></p>
+                <img id="docenteFotoPreview" src="" alt="Foto del docente" class="docente-foto">
+                <h3 id="docenteNombre"></h3>
+                <p><strong></strong></p>
+                <img id="docenteLogoPreview" src="" alt="Icono de Carrera" class="docente-logo">
+                <p><strong>Correo:</strong> <span id="docenteCorreo"></span></p>
+                <p><strong>Periodo Actual:</strong> <span id="docentePeriodo"></span></p>
+                <p><strong>Estado:</strong> <span id="docenteEstado"></span></p>
+                <p><strong>Comentario:</strong> <span id="docenteComentario"></span></p>
+            </div>
+        </div>
+        
+        <!-- Segunda columna: PDFs -->
+        <div class="pdf-section-container">
+          
+            <div class="pdf-list-viewer-section">
+                <div class="pdf-list">
+                    <h4>Validacion PDF:</h4>
+                    <ul id="pdfList">
+                        <!-- Archivos PDF se mostrarán aquí -->
+                    </ul>
+                </div>
+                <div class="pdf-viewer">
+                    <h4>Visualización de PDF:</h4>
+                    <embed id="pdfViewer" src="" type="application/pdf" width="100%" height="750px">
+                </div>
+            </div>
+        </div>
+<div class="additional-info-container">
+    <!-- Retroalimentación -->
+    <div class="additional-info">
+        <h4>Certificaciones</h4>
+        <div id="retroalimentacion" class="info-box"></div>
+    </div>
+    <!-- Estudios -->
+    <div class="additional-info">
+        <h4>Cursos</h4>
+        <div id="estudios" class="info-box"></div>
+    </div>
+    <!-- Especialidades -->
+    <div class="additional-info">
+        <h4>Diplomados</h4>
+        <div id="especialidades" class="info-box"></div>
+    </div>
+</div>
+
+
+
+    <!-- Script para cargar los docentes de la base de datos y mostrarlos en la tabla -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableBody = document.getElementById("docente-table-body");
+
+            // Función para cargar los docentes desde la base de datos
+            function cargarDocentes() {
+                fetch("../Php/CrgarD.php") // Asegúrate de que esta ruta sea correcta
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success && data.docentes) {
+                            tableBody.innerHTML = ""; // Limpiar la tabla antes de cargar datos
+
+                            // Recorrer los docentes y agregarlos a la tabla
+                            data.docentes.forEach(docente => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `
+                                    <td>${docente.id}</td>
+                                    <td><img src="data:image/jpeg;base64,${docente.foto}" alt="Foto del docente" width="50"></td>
+                                    <td>${docente.nombre}</td>
+                                    <td><img src="data:image/jpeg;base64,${docente.carrera_icon}" alt="Icono de Carrera" width="30"></td>
+                                    <td>${docente.correo}</td>
+                                    <td>${docente.periodo_actual}</td>
+                                    <td>${docente.estado}</td>
+                                    <td>${docente.comentario || '-'}</td>
+                                `;
+                                tableBody.appendChild(row);
+                            });
+                        } else {
+                            console.error("Error al cargar los docentes:", data.error || "Datos no disponibles");
+                        }
+                    })
+                    .catch(error => console.error("Error en la solicitud:", error));
+            }
+
+            // Llamada a la función cargarDocentes para ejecutar la carga al inicio
+            cargarDocentes();
+        });
+    </script>
+
+    <!-- Script externo para mostrar los detalles del docente -->
+<script src="../JavaScript/ConsultarDetallesDD.js"></script>
+<script src="../JavaScript/CargarDocentes.js"></script>
+<script src="../JavaScript/AgregarD.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Imagen de fondo */
+.background-image {
+    background-image: url('imagenes/1.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 91%;
+    z-index: -6;
+}
+
+/* Caja de registro */
+.register-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(99, 112, 139, 0.6);
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+.register-box .logo img {
+    width: 300px;
+    margin-bottom: 80px;
+}
+
+.register-box form input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    position: relative;
+    top: -50px;
+}
+
+.register-box form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #004AAD;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+}
+
+.help-links {
+    margin-top: 15px;
+}
+
+.help-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1A2F6A;
+    color: white;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer .contact-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.footer .contact-info img {
+    width: 70px;
+    height: auto;
+    margin-right: 150px;
+}
+
+.footer .address {
+    text-align: right;
+    margin-left: auto;
+    padding-left: 200px;
+    flex-grow: 2;
+}
+
+.footer .dirección {
+    text-align: left;
+    margin-left: 400px;
+}
+
+.footer .tecblanco img {
+    width: 150px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.footer .itsoehblanco img {
+    width: 150px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.container .TecOrig img {
+    float: right; /* O puedes usar margin-left */
+    margin-right:1550px; 
+    width: 200px;
+}

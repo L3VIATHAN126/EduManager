@@ -1,0 +1,163 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('background-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Cambiado a 95% */
+    max-width: 1600px; /* Aumentado a 1600px */
+    padding: 60px; /* Aumentado a 40px */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+    width: 48%; /* Aumentado a 48% */
+    margin-right: 20px;
+}
+
+.left-column h2 {
+    font-size: 20px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.left-column p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.upload-form {
+    margin-top: 20px;
+    background-color: rgba(240, 240, 240, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-list h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #003366;
+}
+
+.pdf-list ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.pdf-list li {
+    padding: 10px;
+    background-color: rgba(240, 240, 240, 0.9);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-column {
+    width: 48%; /* Aumentado a 48% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px; /* Aumentado a 20px */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+iframe {
+    width: 100%; /* Ajustado a 100% */
+    height: 600px; /* Aumentado a 600px */
+    border: none;
+}
+
+#contenedor {
+    width: 100vw;
+    height: 80vh; /* Ocupa el 80% de la altura de la ventana */
+    min-height: 600px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-column h2, .pdf-list h3 {
+        font-size: 18px;
+    }
+
+    .left-column p, .pdf-list li {
+        font-size: 12px;
+    }
+}
+
+/* Ajuste adicional para pantallas grandes */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1800px; /* Aumenta aún más el tamaño en pantallas grandes */
+    }
+}
+/* Estilos para los textarea de Misión y Visión */
+textarea#misionText,
+textarea#visionText {
+    width: 100%;
+    min-height: 200px; /* Aumentado para que sea más largo */
+    font-size: 14px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 15px; /* Aumenta el padding para coincidir con el margen interior */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra similar */
+    border: 1px solid rgba(200, 200, 200, 0.3); /* Borde ligero y sutil */
+    resize: vertical; /* Permite cambiar el tamaño verticalmente */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    textarea#misionText,
+    textarea#visionText {
+        font-size: 12px;
+        min-height: 150px; /* Ajuste de altura para pantallas más pequeñas */
+    }
+}

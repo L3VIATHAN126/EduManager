@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../imagenes/Estudiantes.png') no-repeat center center fixed;
+    background-size: cover;
+    transition: background-image 1s ease, opacity 1s ease;
+}
+
+.fade-bg {
+    opacity: 0.3;
+    transition: opacity 1s ease;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Esto la empuja a la derecha */
+}
+
+
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(9, 9, 9, 0.6);
+    width: 100%;
+    padding: 10px 5vw 10px 2vw; /* Menos espacio a la izquierda */
+    border-radius: 30px;
+    box-sizing: border-box;
+    z-index: 100;
+    position: relative;
+}
+
+
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+    padding: 0.7em 1.2em;
+    font-size: 1.1em;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 1.2em;
+    right: 1.2em;
+    bottom: 0.3em;
+    height: 3px;
+    background: #2196f3; /* Azul */
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: 
+        transform 0.4s cubic-bezier(.2,0,0,1),
+        left 0.2s cubic-bezier(.04,.48,0,1),
+        right 0.2s cubic-bezier(.04,.48,0,1);
+    transform-origin: left;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+    transform: scaleX(1);
+    left: 0;
+    right: 0;
+    transition: 
+        transform 0.4s cubic-bezier(.2,0,0,1),
+        left 0.2s cubic-bezier(.04,.48,0,1),
+        right 0.2s cubic-bezier(.04,.48,0,1);
+    transform-origin: right;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #2196f3;
+    transition: color 0.3s;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Espacio entre logos */
+    padding-left: 30px;
+}
+
+.expo-logo {
+    height: 60px;
+    width: auto;
+}
+
+.EDUMANAGER {
+    height: 50px;
+    width: auto;
+    position: static;
+    margin-left: 100px; /* Aumenta este valor para separarlo más de la izquierda */
+}
+
+.busqueda {
+    height: 38px;
+    width: auto;
+    margin-left: auto;
+    margin-right: 20px;
+    filter: brightness(100); /* Incrementar brillo */
+
+}
+
+
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+    margin-left: 0;
+    padding: 0 2vw;
+}
+
+.LogoItsoeh {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+}
+
+.Carga {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: auto;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1A2F6A;
+    color: white;
+    padding: 20px 2vw;
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+
+.footer .contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.footer .contact-info img {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer .address {
+    text-align: left;
+    margin-left: 200px;
+}
+
+.footer .tecblanco img,
+.footer .itsoehblanco img {
+    width: 150px;
+    height: auto;
+    margin-left: 100px;
+}
+/* Menu Sandwich */
+.menu-sandwich {
+    display: inline-block;
+    position: relative;
+    margin-left: 0;    /* Asegúrate de que no tenga margen a la izquierda */
+    padding-left: 0;   /* Asegúrate de que no tenga padding a la izquierda */
+}
+
+.menu-sandwich img {
+    cursor: pointer;
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+    top: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Agrega transición suave */
+}
+
+.menu-sandwich img:hover {
+    transform: scale(1.15); /* Hace que el icono sobresalga */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Sombra para resaltar */
+}
+
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    background-color: rgb(99, 112, 139,0.7);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 5);
+    border-radius: 20px;
+    z-index: 1;
+    width: 400px;
+}
+
+.menu-sandwich:hover .menu-desplegable {
+    display: block;
+}
+
+.menu-desplegable a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-desplegable a:hover {
+    background-color:rgb(0, 0, 0,0.6);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 5);
+    
+}
+/* Dropdown Menu */
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item .dropdown-toggle:hover + .dropdown-menu,
+.nav-item .dropdown-menu:hover {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    z-index: 1;
+    width: 300px;
+    top: 100%; /* Posiciona el menú desplegable debajo del enlace */
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu a img {
+    margin-right: 10px;
+    width: 50px;
+    height: auto;
+}
+.historia-icon {
+    width: 10px; /* Adjust width */
+    height: auto;
+    margin-right: 10px; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.historia-menu .historia-icon {
+    width: 30px; /* Ajusta al tamaño deseado */
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+/* Panel de Perfil de Egresados */
+#egresadosPanel {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Para mantenerlo en el centro de la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar en la pantalla */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background-color:rgb(255, 255, 255,0.8); /* Fondo blanco */
+    padding: 10px;
+    width: 93%;
+    height: 70%;
+    max-width: 50000px; /* Puedes ajustar el tamaño máximo del modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra alrededor del modal */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+.panel-content {
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.document-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.panel-content iframe {
+    right: 50%;
+    width: 50%;
+    height: calc(200% - 50px); /* Calcula la altura restando espacio para el título y otros elementos */
+    border: none;
+}
+
+
+body.modal-open {
+    overflow: hidden; /* Evita que la página se desplace cuando el modal está abierto */
+}
+
+
+
+/* Menú desplegable para Historia */
+.submenu-historia {
+    position: relative;
+}
+
+.submenu-opciones {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgba(99, 112, 139, 0.7); /* Color de fondo similar al menú desplegable */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 20px; /* Bordes redondeados igual que el menú principal */
+    z-index: 1;
+    width: 300px; /* Ancho similar al menú desplegable */
+}
+
+.submenu-historia:hover .submenu-opciones {
+    display: block;
+}
+
+.submenu-opciones a {
+    color: white; /* Color de texto blanco igual que el menú principal */
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu-opciones a:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Color de fondo al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.btn1::before {
+  height: 2px;
+  width: 0;
+  top: 0;
+  left: 0;
+  transition-delay: 0.4s;
+}
+.btn1::after {
+  width: 2px;
+  height: 0;
+  top: 0;
+  right: 0;
+  transition-delay: 0.3s;
+}
+.btn1 span::before {
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  right: 0;
+  transition-delay: 0.2s;
+}
+.btn1 span::after {
+  width: 2px;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  transition-delay: 0.1s;
+}
+.btn1:hover::before {
+  width: 100%;
+}
+.btn1:hover::after {
+  height: 100%;
+  transition-delay: 0.1s;
+}
+.btn1:hover span::before {
+  width: 100%;
+  transition-delay: 0.2s;
+}
+.btn1:hover span::after {
+  height: 100%;
+  transition-delay: 0.3s;
+}
+.btn1:hover {
+  color: #fff;
+  letter-spacing: 2px;
+}
+/* Estilo para el iframe centrado */
+#contenedor {
+    position: absolute;
+    top: 300px;   /* Ajusta este valor según la altura de tu navbar */
+    left: 0;
+    z-index: 1;
+    height: 700px;
+    width: 100vw;
+   
+}
+
+
+[data-role="admin"] {
+    display: none; /* Oculto por defecto */
+}
+
+.nav-links {
+    margin-left: 100px; /* O usa un valor menor, como 20px */
+}
+
+/* Para todos los enlaces de menú y botones tipo .btn1 */
+.navbar a,
+.menu-desplegable a,
+.btn1 {
+    transition: 
+        color 0.3s,
+        transform 0.2s cubic-bezier(.2,0,0,1),
+        box-shadow 0.2s cubic-bezier(.2,0,0,1);
+}
+
+.navbar a:hover,
+.menu-desplegable a:hover,
+.btn1:hover {
+    color: #2196f3;
+    transform: scale(1.12); /* Hace que sobresalga */
+    box-shadow: 0 4px 20px rgba(33,150,243,0.15); /* Sombra azul suave */
+    z-index: 2;
+}
+
+.perfil-contenedor {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.perfil-card {
+    background: #fff;
+    color: #222;
+    padding: 30px 40px;
+    border-radius: 16px;
+    min-width: 300px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    position: relative;
+}
+.cerrar-perfil {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 2em;
+    color: #2196f3;
+    cursor: pointer;
+}

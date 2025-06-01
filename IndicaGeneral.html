@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Materias</title>
+    <link rel="stylesheet" href="../Css/Indicadores.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Indicadores de ISIC</h1>
+
+        <!-- Filtros -->
+        <div id="filtersContainer" class="filters-container">
+            <label for="unidadSelect">Seleccionar Unidad:</label>
+            <select id="unidadSelect">
+                <option value="todas">Todas las unidades</option>
+                <option value="unidad1">Unidad 1</option>
+                <option value="unidad2">Unidad 2</option>
+            </select>
+        </div>
+
+        <!-- Contenedor para gráficos -->
+        <div id="chartsContainer" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px;">
+            <!-- Los gráficos serán generados dinámicamente -->
+        </div>
+
+        <!-- Tabla de datos -->
+        <section id="tableSection" style="margin-top: 30px; display: none;">
+            <table id="materiasTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Clave</th>
+                        <th>Asignatura</th>
+                        <th>Eje</th>
+                        <th>Docente</th>
+                        <th>Total de Grupo</th>
+                        <th>Aprobación (%)</th>
+                        <th>Reprobación (%)</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Datos serán llenados dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Dependencias -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="../JavaScript/ConsIndicadores.js"></script>
+</body>
+</html>

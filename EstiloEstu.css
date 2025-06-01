@@ -1,0 +1,209 @@
+/* Fondo general */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 50, 90, 0.9); /* Fondo azul oscuro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    min-height: 70vh; /* Altura mínima más grande */
+    max-height: 95vh;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido */
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Sombra */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    color: rgba(30, 50, 90, 1); /* Azul oscuro */
+}
+
+/* Títulos */
+.container h1 {
+    font-size: 2.4em;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(30, 50, 90, 1); /* Azul oscuro */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+
+.container h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgba(30, 50, 90, 1); /* Azul oscuro */
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+
+/* Sección de Subir PDFs */
+form#pdfForm {
+    background-color: rgba(40, 70, 120, 0.9); /* Azul llamativo */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+form#pdfForm label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form#pdfForm input[type="file"] {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(30, 50, 90, 1);
+    cursor: pointer;
+    width: 80%;
+    max-width: 400px;
+}
+
+form#pdfForm button {
+    background-color: rgba(20, 50, 100, 1); /* Azul intenso */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+form#pdfForm button:hover {
+    background-color: rgba(15, 40, 80, 1); /* Azul más oscuro */
+    transform: scale(1.05); /* Zoom ligero */
+}
+
+/* Contenedor de la barra de búsqueda */
+#searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaciado entre elementos */
+    margin-top: 20px;
+}
+
+/* Selector de búsqueda */
+#searchType {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid rgba(30, 50, 90, 0.3); /* Borde translúcido */
+    background-color: rgba(40, 60, 100, 0.9); /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+#searchType:hover {
+    background-color: rgba(50, 70, 120, 1); /* Fondo azul más claro */
+    transform: scale(1.05); /* Efecto zoom */
+}
+
+/* Campo de entrada */
+#searchInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid rgba(30, 50, 90, 0.3); /* Borde translúcido */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+    color: rgba(30, 50, 90, 1); /* Texto azul oscuro */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+#searchInput:focus {
+    outline: none;
+    border: 1px solid rgba(50, 70, 120, 1); /* Borde azul brillante */
+    box-shadow: 0px 4px 15px rgba(50, 70, 120, 0.5); /* Sombra al enfoque */
+}
+
+/* Botón de búsqueda */
+#searchButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(30, 50, 90, 1); /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+#searchButton:hover {
+    background-color: rgba(20, 40, 70, 1); /* Fondo azul más oscuro */
+    transform: scale(1.05); /* Efecto zoom */
+}
+
+#searchButton:active {
+    transform: scale(0.95); /* Efecto de clic */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+}
+
+/* Tabla */
+#studentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    background-color: rgba(30, 50, 90, 0.95); /* Fondo azul oscuro */
+}
+
+#studentsTable th, #studentsTable td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco translúcido */
+    color: white; /* Texto blanco */
+}
+
+#studentsTable th {
+    background-color: rgba(20, 40, 70, 1); /* Azul más oscuro */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#studentsTable tr:nth-child(even) {
+    background-color: rgba(40, 60, 100, 0.9); /* Azul más claro */
+}
+
+#studentsTable tr:hover {
+    background-color: rgba(50, 70, 120, 0.9); /* Azul más brillante al pasar el cursor */
+}
+

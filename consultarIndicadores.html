@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicadores Educativos</title>
+    <link rel="stylesheet" href="../Css/Indicadores.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1>Indicadores Educativos</h1>
+    <table id="indicadoresTable" border="1">
+        <thead>
+            <tr>
+                <th>Programa Educativo</th>
+                <th>Matrícula Oficial</th>
+                <th>Matrícula Final</th>
+                <th>Matrícula Evaluada</th>
+                <th>Meta Aprovechamiento (%)</th>
+                <th>Resultado Aprovechamiento (%)</th>
+                <th>Meta Aprobación (%)</th>
+                <th>Resultado Aprobación (%)</th>
+                <th>Meta Reprobación (%)</th>
+                <th>Resultado Reprobación (%)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Contenedor para gráficos -->
+    <div id="chartsContainer" style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px;">
+        <!-- Los gráficos serán generados dinámicamente -->
+    </div>
+
+    <script src="../JavaScript/ConsultarIndicadores.js"></script>
+</body>
+</html>
